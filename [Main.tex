@@ -1,0 +1,1518 @@
+%----------------------------------------------------------------------------------------------------------------
+%	P A G E    S E T - U P
+%----------------------------------------------------------------------------------------------------------------
+
+%\documentclass{article}
+\documentclass[leqno,11pt]{report}
+%\documentclass[reqno,11pt]{report}
+%\topmargin=-0.45in
+%\evensidemargin=0in
+%\oddsidemargin=0in
+%\textwidth=6.5in
+%\textheight=9.0in
+%\headsep=0.25in
+\usepackage{geometry}
+\geometry{bindingoffset=0cm}
+\geometry{textwidth=390pt}
+\textheight=8.5in
+\headsep=0.15in
+
+
+\pagestyle{empty}
+\setlength{\parindent}{5pt}   
+% packages for fancy fonts, symbols, thm/proof environments, etc
+ 
+
+\makeatletter
+\newcommand\useleqno{\renewcommand\@eqnnum{\hb@xt@.01\p@{}%
+                      \rlap{\normalfont\normalcolor
+                        \hskip -\displaywidth(\theequation)}}}
+                        
+%----------------------------------------------------------------------------------------------------------------
+%	F O N T S
+%---------------------------------------------------------------------------------------------------------------
+
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+%\usepackage[T1]{fontenc}
+%\usepackage{mathpazo}
+%\usepackage{tgpagella}
+\usepackage[mathscr]{euscript}
+
+
+
+%\usepackage{pxfonts}
+%\usepackage{quoting}
+%\quotingsetup{font={itshape,footnotesize}}
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	P A C K A G E S
+%----------------------------------------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------ C O M M A N D S
+
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm, bm}
+%\usepackage{esint}
+\usepackage{setspace}
+\usepackage{nicefrac}
+\usepackage{enumitem, kantlipsum}
+\usepackage{calc}
+\usepackage{soul}
+\usepackage{upgreek}
+
+\usepackage{import}
+%\usepackage[table]{xcolor}
+\usepackage{booktabs}
+
+
+
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\setlength{\fboxsep}{0.5em}
+\usepackage{empheq}
+\usepackage{centernot}
+\usepackage{blkarray}
+
+\allowdisplaybreaks
+
+\usepackage{textgreek}
+%\usepackage[euler]{textgreek}
+
+%\usepackage[cal=boondox]{mathalfa}
+\usepackage{scalerel}
+\usepackage{amsfonts} 
+%\usepackage{mathabx}
+%\usepackage{verbatim}
+
+
+
+
+%------------------------------------------------------------------------------ P A G E   S E T - U P
+
+\usepackage{nicefrac}
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+%\usepackage[usenames,dvipsnames]{color} % Required for custom colors
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{graphicx} % Required to insert images
+\graphicspath{{figures}}
+\usepackage{listings} % Required for insertion of code
+\usepackage{courier} % Required for the courier font
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{titlesec}
+
+
+\usepackage{standalone}
+\usepackage{changepage}
+\usepackage[makeroom]{cancel}
+\usepackage{scalerel,stackengine}
+\usepackage{floatrow}
+\usepackage{caption}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{bbm}
+
+
+
+\usepackage{titlesec}
+\usepackage{tikz-cd}
+\usepackage{accents}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{subcaption}
+%\usepackage{physics}
+\usepackage[italicdiff]{physics}
+\usepackage{pifont}
+\usetikzlibrary{positioning,arrows}
+
+%\usepackage{array}
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	N E W   C O M M A N D S
+%----------------------------------------------------------------------------------------------------------------
+
+\newcommand{\into}{\lrcorner \, }
+\newcommand{\inn}{\, \in \, }
+\newcommand{\mr}{\mathring}
+\newcommand{\hs}{\hslash}
+\newcommand{\simm}{\ \sim \ }
+\newcommand{\frontwc}[1]{\prescript{\vee}{}{#1}}
+\newcommand{\bw}{\bigwedge \nolimits}
+\newcommand{\bv}{\bigvee \nolimits}
+\newcommand{\pseu}{\psi\text{DO}}
+\newcommand{\wlim}[1]{\underset{#1}{\nm{weak\,}\lim}\ }
+\newcommand{\ccdot}{{\,\bm{\cdot} \,}}
+\newcommand{\ctimes}{\! \cdot \!}
+\newcommand{\mdot}{{\cdot}}
+\newcommand{\Ad}{\nm{Ad}}
+\newcommand{\Ric}{\nm{Ric}}
+\newcommand{\Alt}{\nm{Alt}}
+\newcommand{\para}{/\!/}
+\newcommand{\dist}{\nm{dist}}
+\newcommand{\csubset}{\subset \subset}
+\newcommand{\subsett}{\ \subset \ }
+\newcommand{\inclu}{\hookrightarrow}
+\newcommand{\kap}{\kappa}
+\newcommand{\cis}{\nm{\,cis\,}}
+\newcommand{\ldim}{\underline{\nm{dim}}}
+\newcommand{\udim}{\overline{\nm{dim}}}
+%\newcommand{\sech}{\nm{sech}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\rcur}{{\scr r}}
+\newcommand{\brcur}{\bm \rcur}
+\newcommand{\nab}{\nabla}
+\newcommand{\ome}{\omega}
+\newcommand{\Ome}{\Omega}
+\newcommand{\dto}{\downarrow}
+\newcommand{\uto}{\uparrow}
+\newcommand{\del}{\delta}
+\newcommand{\Del}{\Delta}
+\newcommand{\tha}{\theta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\img}{\nm{im\,}}
+\newcommand{\at}[1]{\!^{\,\, #1}}
+\newcommand{\emp}{\varnothing}
+\newcommand{\corr}{\ \longleftrightarrow \ }
+\newcommand{\Corr}{\ \Leftrightarrow \ }
+\newcommand\finline[3][]{\begin{myfont}[#1]{#2}#3\end{myfont}}%
+\newcommand{\sket}{\text{Sketch of Proof}}
+\newcommand{\re}{\nm{Re\,}}
+\newcommand{\im}{\nm{Im\,}}
+\newcommand{\dual}{\nm{dual\,}}
+\newcommand{\ol}{\overline}
+\newcommand{\sig}{\sigma}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\alp}{\alpha}
+\newcommand{\gam}{\gamma}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\Div}{\nabla \cdot}
+\newcommand{\vDiv}{\vec \nabla \cdot}
+\newcommand{\Curl}{\nabla \times}
+\newcommand{\Lap}{\Del}
+\newcommand{\Grad}{\nab}
+\newcommand{\vGrad}{\vec \nab}
+\newcommand{\lap}{\bm{\Del}}
+\newcommand{\id}{\textnormal{id}}
+\newcommand{\emphr}[1]{\emph{\textcolor{red}{#1}}}
+\newcommand{\embf}[1]{\emph{\textbf{#1}}}
+\newcommand{\emphred}[1]{\emph{\textcolor{red}{#1}}}
+\newcommand{\sgn}{\textnormal{sgn}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\refl}{\text{ref}}
+\newcommand{\Capa}{\textnormal{Cap}}
+\newcommand{\capa}{\textnormal{Cap}}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\oX}{\prescript{o}{}X}
+\newcommand{\pX}{\prescript{p}{}X}
+\newcommand{\Xo}{X_o}
+\newcommand{\Xp}{X_p}
+\newcommand{\geqs}{\geqslant}
+\newcommand{\leqs}{\leqslant}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\Dom}{\nm{Dom}\,}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Var}{\nm{Var}}
+%\newcommand{\var}{\textnormal{var}}
+\newcommand{\Cov}{\nm{Cov}}
+\newcommand{\cov}{\nml{cov}}
+\newcommand{\supp}{\nm{supp}\,}
+\newcommand{\ut}[1]{\underset{\wt{}}{#1}}
+
+
+
+\newcommand{\benum}{\begin{enumerate}}
+\newcommand{\eenum}{\end{enumerate}}
+\newcommand{\benums}{\begin{enumerate*}}
+\newcommand{\eenums}{\end{enumerate*}}
+\newcommand{\benuma}{\begin{enumeratea}}
+\newcommand{\eenuma}{\end{enumeratea}}
+\newcommand{\benumar}{\begin{enumeratear}}
+\newcommand{\eenumar}{\end{enumeratear}}
+
+\newcommand{\PP}{\text{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\Rp}{\R_{\geq 0}}
+\newcommand{\inv}{{-1}}
+\newcommand{\normm}[1]{\lVert#1\rVert}
+\newcommand{\normnull}{\left\lVert \cdot \right\rVert}
+%\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\babs}[1]{\big\lvert #1\big\rvert}
+%\newcommand{\prd}[1]{\left\langle#1\right\rangle}
+\newcommand{\prd}[1]{\left\langle #1\right\rangle}
+\newcommand{\bprd}[1]{\big\langle #1\big\rangle}
+\newcommand{\Bprd}[1]{\Big\langle #1\Big\rangle}
+\DeclarePairedDelimiter\prdd{\langle}{\rangle} 
+\newcommand{\prdl}[1]{\prd{#1 ,\cdot\,}}
+\newcommand{\prdr}[1]{\prd{\, \cdot, #1}}
+\newcommand{\prdnull}{\left\langle \cdot \, , \cdot \right\rangle}
+\newcommand{\Prd}[1]{\langle\!\langle#1\rangle\!\rangle}
+\newcommand{\Prdnull}{\Prd{\cdot}}
+\newcommand{\brck}[1]{\!\left[#1\right]}
+\newcommand{\brckk}[1]{\!\left[\, #1\, \right]}
+\newcommand{\prnt}[1]{\!\left(#1\right)}
+\newcommand{\brce}[1]{\!\left\{ #1\right\}}
+%\newcommand{\aqty}[1]{\left\langle #1\right\rangle}
+%\newcommand{\brck}[1]{\left[#1\right]}
+%\newcommand{\prnt}[1]{\left(#1\right)}
+%\newcommand{\brce}[1]{\left\{ #1\right\}}
+\newcommand{\varg}[1]{\!\left\langle#1\right\rangle\!}
+\newcommand{\indt}{\hspace{7mm}}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\longto}{\longrightarrow}
+\newcommand{\Longto}{\Longrightarrow}
+\newcommand{\Then}{\, \Rightarrow \,}
+\newcommand{\Longthen}{ \ \Longrightarrow \ }
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+\newcommand{\vphi}{\varphi}
+\renewcommand{\qedsymbol}{\rule{0.5em}{0.5em}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\scr}[1]{\mathcal{#1}}
+\newcommand{\scrr}[1]{\mathscr{#1}}
+\newcommand{\fr}[1]{\mathfrak{#1}}
+\newcommand{\nm}[1]{\textnormal{#1}}
+
+\newcommand{\psigmm}{\psi_\gamma}
+\newcommand{\Ro}{\R^3 - \qty{0}}
+\newcommand{\dom}{\textnormal{dom}}
+\newcommand{\psia}{\psi_\alpha}
+\newcommand{\EE}{{\bf E}}
+\newcommand{\test}[1]{C_c^\infty(#1)}
+\newcommand{\loc}{\nm{loc}}
+\newcommand{\odd}{\nm{odd}}
+\newcommand{\even}{\nm{even}}
+\newcommand{\vect}[1]{\textnormal{\textbf{#1}}}
+\newcommand{\phii}{\varphi}
+\newcommand{\one}{\textnormal{1}}
+\newcommand{\onee}{\textnormal{1\,}}
+\newcommand{\One}{{\bm{1}}}
+\newcommand{\Onee}{{\bm{1}\,}}
+\newcommand{\Vol}{\text{Vol}}
+
+\newcommand{\eq}{\ = \ }
+\newcommand{\eqh}{\, = \, }
+\newcommand{\geql}{\ \geq \ }
+\newcommand{\leql}{\ \leq \ }
+\newcommand{\geqh}{\, \geq \, }
+\newcommand{\leqh}{\, \leq \, }
+%\newcommand{\equalq}{\quad = \quad}
+%\newcommand{\qleq}{\quad \leq \quad}
+%\newcommand{\qgeq}{\quad \geq \quad}
+%\newcommand{\ssp}[1]{ \ {#1} \ }
+
+
+
+\newcommand{\recip}[1]{\frac{1}{#1}}
+\newcommand{\trecip}[1]{\tfrac{1}{#1}} 
+\newcommand{\expp}[1]{\exp \prnt{#1}}
+\newcommand{\qtext}{\quad \text}
+%\newcommand{\qqtext}{\qquad \text}
+\newcommand{\Qtext}{\quad\qtext}
+\newcommand{\QQtext}[1]{\quad \qqtext{#1} \quad}
+\newcommand{\given}{\, \vert \,}
+\newcommand{\ggiven}{\, \big\vert \,}
+\newcommand{\Given}{\, \Big\vert \,}
+\newcommand{\GGiven}{\, \bigg\vert \,}
+\newcommand{\longgiven}{\, \Bigg\vert \,}
+\newcommand{\ninfty}{{-\infty}}
+\newcommand{\zero}{{\, 0}}
+\newcommand{\colorr}[1]{\textcolor{red}{#1}}
+\newcommand{\coloro}[1]{\textcolor{orange}{#1}}
+\newcommand{\colorb}[1]{\textcolor{blue}{#1}}
+\newcommand{\colorrb}[1]{\textcolor{RoyalBlue}{#1}}
+
+\newcommand{\colorm}[1]{\textcolor{magenta}{#1}}
+\newcommand{\colormh}[1]{\textcolor{Mahogany}{#1}}
+\newcommand{\colorfg}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\colorgy}[1]{\textcolor{gray}{#1}}
+\newcommand{\colorg}[1]{\textcolor{green}{#1}}
+\newcommand{\colort}[1]{\textcolor{teal}{#1}}
+\newcommand{\colorp}[1]{\textcolor{purple}{#1}}
+\newcommand{\colorc}[1]{\textcolor{cyan}{#1}}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Nzero}{\N \cup \brce{0}}
+\newcommand{\ind}[2]{{#1=#2}^\infty}
+\newcommand{\vech}{\accentset{\rightharpoonup}}
+\newcommand{\sbullet}[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+\newcommand{\sdot}{{\,\sbullet \,}}
+
+\newcommand{\Span}{\textnormal{Span}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\Sch}{\mathcal{S}}
+
+\newcommand{\bd}{\partial}  
+\newcommand{\eps}{\epsilon}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\epsv}{\varepsilon}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+
+\newcommand{\der}[1]{\frac{d}{d{#1}}}
+\newcommand{\tder}[1]{\tfrac{d}{d{#1}}}
+\newcommand{\coder}[1]{\frac{D}{d{#1}}}
+\newcommand{\gcoder}[1]{\frac{\nab}{d{#1}}}
+\newcommand{\Der}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\coDer}[2]{\frac{D{#1}}{d{#2}}}
+\newcommand{\gcoDer}[2]{\frac{\nab{#1}}{d{#2}}}
+\newcommand{\dder}[1]{\frac{d^{\,2}}{d{#1}^2}}
+\newcommand{\tdder}[1]{\tfrac{d^{\,2}}{d{#1}^2}}
+\newcommand{\DDer}[2]{\frac{d^{\,2}{#1}}{d{#2}^2}}
+
+\newcommand{\nabder}[1]{\gcoder{#1}}
+\newcommand{\nabDer}[2]{\gcoDer{#1}{#2}}
+
+\newcommand{\pder}[1]{\frac{\partial}{\partial{#1}}}
+\newcommand{\Pder}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\copder}[1]{\frac{D}{\partial{#1}}}
+\newcommand{\coPder}[2]{\frac{D{#1}}{\partial{#2}}}
+
+\newcommand{\ppder}[1]{\frac{\partial^2}{\partial{#1}^2}}
+\newcommand{\PPder}[2]{\frac{\partial^2{#1}}{\partial{#2}^2}}
+
+
+\newcommand{\floor}[1]{\lfloor{#1}\rfloor}
+\newcommand{\ceil}[1]{\lceil{#1}\rceil}
+\newcommand{\specT}{\sigma_{ap}(\textbf{T})}
+\newcommand{\TT}{\textbf{T}}
+\newcommand\restr[2]
+  {{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+  }}
+
+
+\newcommand{\specap}[1]{\sigma_{ap}{(#1)}}
+\newcommand{\Nul}{\nm{Nul}\,}
+\newcommand{\Ran}{\nm{Ran}\,}
+\newcommand{\mtng}{martingale}
+\newcommand{\cont}{continuous}
+\newcommand{\diff}{differentiable}
+\newcommand{\bdd}{bounded}
+\newcommand{\dsp}{\displaystyle}
+
+\newcommand\ShiftDown[2]{\raisebox{-#1}{\upshape\scriptsize #2}}
+
+
+\newcommand\x{\times}
+\newcommand\y{\cellcolor{green!10}}
+\newcommand*\xbar[1]{%
+  \hbox{%
+    \vbox{%
+      \hrule height 0.5pt % The actual bar
+      \kern0.3ex%         % Distance between bar and symbol
+      \hbox{%
+        \kern-0.15em%      % Shortening on the left side
+        \ensuremath{#1}%
+        \kern-0.05em%      % Shortening on the right side
+      }%
+    }%
+  }%
+} 
+
+\newcommand\reallywidehat[1]{\arraycolsep=0pt\relax%
+ \begin{array}{c}
+  \stretchto{
+    \scaleto{
+      \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.5pt\bigwedge\kern-.5pt}
+      {\rule[-\textheight/2]{1ex}{\textheight}} %WIDTH-LIMITED BIG WEDGE
+    }{\textheight} % 
+  }{0.5ex}\\           % THIS SQUEEZES THE WEDGE TO 0.5ex HEIGHT
+  #1\\                 % THIS STACKS THE WEDGE ATOP THE ARGUMENT
+  \rule{-1ex}{0ex}
+  \end{array}
+  }
+
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddint{\Xint=}
+\def\dint{\Xint-}
+
+\newcommand{\dt}[1]{%
+  \accentset{\mbox{\large\bfseries .}}{#1}}
+\newcommand{\ddt}[1]{%
+  \accentset{\mbox{\large\bfseries .\hspace{-0.25ex}.}}{#1}}
+  
+
+\DeclarePairedDelimiter\paren{(}{)} 
+
+
+\DeclareFontFamily{U}{mathx}{}
+\DeclareFontShape{U}{mathx}{m}{n}{ <-> mathx10 }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+
+\DeclareMathSymbol{\widechecksym}{\mathord}{mathx}{"71}
+\newcommand\lowerwidechecksym{%
+  \text{\smash{\hspace*{-0.25ex}\raisebox{-1.1ex}{%
+    $\widechecksym$}}}}
+\newcommand\ch[1]{%
+  \mathchoice
+    {\accentset{\displaystyle\lowerwidechecksym}{#1}}
+    {\accentset{\textstyle\lowerwidechecksym}{#1}}
+    {\accentset{\scriptstyle\lowerwidechecksym}{#1}}
+    {\accentset{\scriptscriptstyle\lowerwidechecksym}{#1}}
+}
+
+%\DeclareMathAccent{\what}{0}{mathx}{"70}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\newcommand{\wc}{\widecheck}
+
+
+%\DeclareMathSymbol{\widehatsym}{\mathord}{mathx}{"70}
+%\newcommand\lowerwidehatsym{%
+%  \text{\smash{\hspace*{-0.25ex}\raisebox{-1.1ex}{%
+%    $\widehatsym$}}}}
+%\newcommand\wh[1]{%
+%  \mathchoice
+%    {\accentset{\displaystyle\lowerwidehatsym}{#1}}
+%    {\accentset{\textstyle\lowerwidehatsym}{#1}}
+%    {\accentset{\scriptstyle\lowerwidehatsym}{#1}}
+%    {\accentset{\scriptscriptstyle\lowerwidehatsym}{#1}}
+%}
+   
+   
+\DeclareMathOperator*{\LLlim}{\emph{L}^2-lim}% Define \Lim
+
+%----------------------------------------------------------------------------------------------------------------
+%	E N V I R O N M E N T S
+%----------------------------------------------------------------------------------------------------------------
+
+\newenvironment{ppr}[2]
+{ {\bf #1\\}{- #2} \vspace{.3cm}  \\
+}
+
+%-------------------------------------------------------------------------------------------------------------  
+
+\newenvironment{itemize*}%
+  { \vspace{0mm}
+  \begin{itemize}%
+    \setlength{\itemsep}{0em}%
+    \setlength{\parskip}{1em}}%
+  {\end{itemize}}
+  
+%-------------------------------------------------------------------------------------------------------------  
+
+\newenvironment{enumerate*}%
+  {\begin{enumerate}[label=\nm{\roman*)}]%
+  }
+  {\end{enumerate}
+  }
+  
+%-------------------------------------------------------------------------------------------------------------  
+
+\newenvironment{enumeratea}%
+  {\begin{enumerate}[label=\nm{\alph*)}]%
+  }
+  {\end{enumerate}
+  }
+  
+
+%-------------------------------------------------------------------------------------------------------------  
+
+\newenvironment{enumeratear}%
+  {\begin{enumerate}[label=\nm{\arabic*)}]%
+  }
+  {\end{enumerate}
+  }
+  
+  
+%-------------------------------------------------------------------------------------------------------------
+  
+  \newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  leftmargin=0pt,
+  %rightmargin=0pt,
+  innertopmargin=10pt,
+  %innerbottommargin=-10pt
+  ]{siderules}
+  
+%-------------------------------------------------------------------------------------------------------------  
+  
+  \newenvironment{siderules*}
+    {\begin{siderules} \vspace{0cm}
+    }
+    {\end{siderules}
+    }
+    
+  
+%-------------------------------------------------------------------------------------------------------------
+  
+  \newenvironment{workout}
+    {\begin{adjustwidth}{1cm}{}
+     %\vspace{10pt}
+      \begin{siderules}
+      }
+      {\end{siderules}
+    \end{adjustwidth}
+    }   
+ 
+%-------------------------------------------------------------------------------------------------------------
+  
+  \newenvironment{workout*}
+    {\vspace{10pt}
+    \begin{adjustwidth}{1cm}{}
+      }
+      {
+    \end{adjustwidth}
+    \vspace{10pt}
+    }
+
+%-------------------------------------------------------------------------------------------------------------
+
+\newenvironment{chapabstract}{%
+    \begin{center}%
+      \bfseries Chapter Abstract
+    \end{center}}%
+   {\par}
+   
+%-------------------------------------------------------------------------------------------------------------
+   
+   
+\usepackage{enumitem}
+
+\newlist{mylista}{enumerate*}{1}
+\setlist[mylista]{label=(\arabic*),itemjoin=\quad }
+
+\newlist{mylistr}{enumerate*}{1}
+\setlist[mylistr]{label=\nm{(\roman*)},itemjoin=\quad}
+
+%-------------------------------------------------------------------------------------------------------------
+
+\newenvironment{myfont}[2][]{\csname#2\endcsname[#1]}{}
+\newcommand{\Alpine}[1][]{\fontfamily{Alpine}#1\selectfont}
+\newcommand{\Helvet}[1][]{\fontfamily{ppl}#1\selectfont}
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	T H E O R E M    S T Y L E
+%----------------------------------------------------------------------------------------------------------------
+
+\newtheoremstyle{break}
+{1.5em}
+{1.5em}
+{\itshape}
+{}
+{\bfseries}
+{.}
+{\newline}
+{}
+\theoremstyle{break}
+
+\newtheoremstyle{newstyle}      
+{1.5em} %Aboveskip 
+{1.5em} %Below skip
+{\itshape} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{.} %Punctuation afer theorem header
+{1em} %Space after theorem header
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} %Heading
+
+\newtheoremstyle{newstyle2}      
+{1.5em} %Aboveskip 
+{1.5em} %Below skip
+{\mdseries} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{.} %Punctuation afer theorem header
+{.3cm} %Space after theorem header
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} %Heading
+
+\newtheoremstyle{newstyle3}      
+{1.5em} %Aboveskip 
+{1.5em} %Below skip
+{\mdseries} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{.} %Punctuation afer theorem header
+{\newline} %Space after theorem header
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} %Heading
+
+\newtheoremstyle{newstyle4}      
+{1.5em} %Aboveskip 
+{1.5em} %Below skip
+{\itshape} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{.} %Punctuation afer theorem header
+{.3cm} %Space after theorem header
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} %Heading
+
+\newtheoremstyle{newstyle5}      
+{1em} %Aboveskip 
+{1em} %Below skip
+{\mdseries} %Body font e.g.\mdseries,\bfseries,\scshape,\itshape
+{} %Indent
+{\bfseries} %Head font e.g.\bfseries,\scshape,\itshape
+{\\ } %Punctuation afer theorem header
+{.3cm} %Space after theorem header
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}} %Heading
+
+
+%\theoremstyle{newstyle}
+%\newtheorem{thm}{Theorem}[Section]
+%\theoremstyle{newstyle}
+%\newtheorem{cor}{Corollary}[thm]
+%\newtheorem{lmm}[thm]{Lemma}
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{rmk}[thm]{Remark}
+%\newtheorem{pps}[thm]{Proposition}
+%\theoremstyle{definition}
+%\newtheorem{exm}[thm]{Example}
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	C O U N T E R
+%----------------------------------------------------------------------------------------------------------------
+
+
+%--------Theorem Counter----------------------------------------------------------------
+\theoremstyle{newstyle}
+\newtheorem{thm}{Theorem}[section]   		%numbers after .
+%\newtheorem{thm}{Theorem}[chapter]
+
+%-----------------------------------------------------------------------------------------------
+
+\setcounter{section}{0}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{5}
+
+
+\counterwithin{thm}{section} 					%numbers before .
+%\counterwithin{thm}{chapter}
+
+\counterwithin{equation}{section}
+%\counterwithin{equation}{chapter}
+%\counterwithin*{equation}{section}
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	N E W    T H E O R E M
+%----------------------------------------------------------------------------------------------------------------
+
+\theoremstyle{newstyle}
+\newtheorem*{thm*}{Theorem}
+
+\theoremstyle{newstyle4}
+\newtheorem{thmx}{Theorem}
+
+\theoremstyle{newstyle}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{newstyle4}
+\newtheorem{corx}{Corollary}
+
+\theoremstyle{newstyle}
+\newtheorem{lmm*}{Lemma}
+
+\theoremstyle{newstyle}
+\newtheorem{lmm}[thm]{Lemma}
+
+\theoremstyle{newstyle2}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{newstyle3}
+\newtheorem{defn*}{Definition}
+
+\theoremstyle{newstyle2}
+\newtheorem{rmk}[thm]{Remark}
+
+\theoremstyle{newstyle2}
+\newtheorem*{rmk*}{Remark}
+
+\theoremstyle{newstyle2}
+\newtheorem{note}[thm]{Note}
+
+\theoremstyle{newstyle}
+\newtheorem{pps}[thm]{Proposition}
+
+\theoremstyle{newstyle}
+\newtheorem*{pps*}{Proposition}
+
+\theoremstyle{newstyle4}
+\newtheorem{ppsx}{Proposition}
+
+\theoremstyle{newstyle2}
+\newtheorem{exm}[thm]{Example}
+
+\theoremstyle{newstyle3}
+\newtheorem{exm*}{Example}
+
+\theoremstyle{newstyle2}
+\newtheorem{smm}{Summary}
+
+\theoremstyle{newstyle2}
+\newtheorem{nota}[thm]{Notation}
+
+
+
+
+%\theoremstyle{newstyle}
+%\newtheorem*{thm}{Theorem}
+
+%\newtheorem*{qst}{\textcolor{red} {Question}}
+%\newtheorem*{qstn}{\textcolor{red} {Question}}
+
+\newtheorem*{qst}{{Question}}
+\newtheorem*{qstn}{{Question}}
+\theoremstyle{newstyle2.5}
+\newtheorem*{ans}{\textcolor{red} {Answer}}
+
+
+\theoremstyle{newstyle2}
+\newtheorem{pblm}[thm]{Problem}
+%\newtheorem{pblm}{Problem}[chapter]
+
+\theoremstyle{newstyle2}
+\newtheorem{exc}[thm]{Exercise}
+%\newtheorem{pblm}{Problem}[chapter]
+
+\theoremstyle{newstyle2}
+\newtheorem*{sol}{Solution}
+
+\theoremstyle{newstyle2}
+\newtheorem*{answ}{Answer}
+
+
+% Define newstyle
+\newtheoremstyle{named}
+{1em}{}{\itshape}{}{\bfseries}{.}{0.5em}{\thmnote{#3}#1} 
+
+
+%\theoremstyle{definition}
+\theoremstyle{named} 
+% Set up the header and footer
+\newtheorem*{namedthm}{}
+
+
+
+% Define newstyle
+\newtheoremstyle{named2}
+{1em}{}{\itshape}{}{\bfseries}{}{0.5em}{\thmnote{#3}#1} 
+
+%\theoremstyle{definition}
+\theoremstyle{named2} 
+\newtheorem*{namedthmno}{}
+
+
+
+% Define newstyle
+\newtheoremstyle{named3}
+{1em}{}{\mdseries}{}{\bfseries}{}{1em}{\thmnote{#3}#1} 
+
+%\theoremstyle{definition}
+\theoremstyle{named3} 
+\newtheorem*{namedexm}{}
+
+%\newmdtheoremenv{theo}{Theorem}
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	P A G E   H E A D E R
+%----------------------------------------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage} 
+\fancyhead[L]{{\footnotesize {\it \rightmark}}}
+%\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength\parindent{7mm} % Removes all indentation from paragraphs
+
+
+
+%--------------------chapter format---------------------
+
+% CENTER WITHOUT NUMBER
+%\titleformat{\chapter}[display]
+%{\centering \normalfont\bfseries}{}{0pt}{\Huge}
+
+% CENTER WITH NUMBER
+\titleformat{\chapter}[hang]
+{\centering \Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+% LEFT WITH NUMBER
+%\titleformat{\chapter}[hang]
+%{\Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+% RIGHT WITH NUMBER
+%\titleformat{\chapter}[hang]
+%{\filleft \Huge\bfseries}{\thechapter{. }}{0pt}{\Huge\bfseries}
+
+
+%  for Papers Summary
+%  CENTER WITHOUT NUMBER, NORMAL FONT
+%\titleformat{\chapter}[display]
+%{\centering \normalfont\mdseries}{}{0pt}{\LARGE}
+
+
+
+
+%---------------------section format---------------------
+
+%\renewcommand{\thesection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesection}{\arabic{section}}
+% Nothing
+  
+
+
+%-----------------------------------------------------------------------------------------------------------------  
+%\pagestyle{fancy}
+%\fancyhf{}
+%\cfoot{} 
+%\fancyhead[L]{\rightmark}
+%\fancyhead[R]{\thepage}
+%\renewcommand{\headrulewidth}{0.5pt}
+%
+%\setlength\parindent{15pt} % Removes all indentation from paragraphs
+
+
+%\counterwithin{equation}{section}
+%\newcounter{example}
+%\counterwithin{example}{section}
+%\newenvironment{example}[1][]{%
+%\stepcounter{example}%
+%\par\vspace{5pt}\noindent
+%\fbox{\textbf{Example~\thesection.\theexample}}%
+%\hrulefill\par\vspace{10pt}\noindent\rmfamily}%
+%{\par\noindent\hrulefill\vrule width10pt height2pt depth2pt\par}
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%	D O C U M E N T
+%----------------------------------------------------------------------------------------------------------------
+
+
+\usepackage{graphicx}
+
+
+\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{ZScriptR}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{ZBoldR}}$}}}
+\def\hrcurs{{\mbox{$\hat \brcurs$}}}
+
+\begin{document}
+
+\def\dnicefrac#1#2{ 
+	\raise.5ex\hbox{$#1$} 
+	\kern-.1em/\kern-.15em 
+	\lower.25ex\hbox{$#2$}}
+\title{RESEARCH SUPPLEMENTARY NOTES}
+
+\begin{onehalfspacing}
+
+\def\dnicefrac#1#2{ 
+	\raise.5ex\hbox{$#1$} 
+	\kern-.1em/\kern-.15em  t
+	\lower.25ex\hbox{$#2$}}
+	
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+	
+
+%------------------------------------------------------------------------------ T I T L E
+
+%\centerline{\Huge \bf {Research Side Notes}} \vspace{.5cm}
+%\maketitle
+\tableofcontents
+
+\newpage
+
+%------------------------------------------------------------------------------ B O D Y
+
+
+%
+%\section{First equation}
+%Some introductory text...
+%\begin{example}
+%\begin{equation}
+%    f(x)=\frac{x}{1+x^2}
+%\end{equation}
+%\end{example}
+%
+%\subsection{More detail}
+%\begin{example}
+%Here we discuss
+%\begin{equation}
+%    f(x)=\frac{x+1}{x-1}
+%\end{equation}
+%... but don't say anything
+%\end{example}
+%
+%\subsubsection{Even more detail}
+%\begin{example}
+%\begin{equation}
+%    f(x)=\frac{x^2}{1+x^3}
+%\end{equation}
+%\begin{equation}
+%    f(x+\delta x)=\frac{(x+\delta x)^2}{1+(x+\delta x)^3}
+%\end{equation}
+%\end{example}
+%
+%\section{Third equation}
+%\begin{example}
+%The following function...
+%\begin{equation}
+%    f_1(x)=\frac{x+1}{x-1}
+%\end{equation}
+%..is a function
+%\begin{equation}
+%    f_2(x)=\frac{x^2}{1+x^3}
+%\end{equation}
+%\begin{equation}
+%    f_3(x)=\frac{3+ x^2}{1-x^3}
+%\end{equation}
+%\end{example}
+
+%  \include{Notebook}
+%  \include{Ch_ProbBasics}
+%  \include{Ch_DirichletForm}
+%  \include{Ch_SDE}
+%  \include{Ch_Measure}
+%  \include{Ch_Topology}
+%  \include{Ch_DiffGeo}
+%  \include{Ch_MathPhysics}
+%  \include{Ch_PDE}
+%  \import{Old Files/}{Ch_ProbBasics}
+%  \import{New Files/}{DirichletForm}
+  
+  
+%------------------------TOPOLOGY------------------------
+
+%  \import{Topology/}{Topology}
+%  \import{Topology/Wilansky/}{Semimetric}
+%  \import{Topology/Wilansky/}{BaseSubbase}
+%  \import{Topology/Wilansky/}{Sequence}
+%  \import{Topology/Wilansky/}{Filter}
+%  \import{Topology/Wilansky/}{Separable}
+%  \import{Topology/}{Compact}
+%  \import{Topology/}{StoneWeier}
+%  \import{Topology/Wilansky/}{WeakTopology}
+%  \import{Topology/Wilansky/}{ProductTopology}
+  
+
+%------------------------REAL------------------------
+
+%  \import{Real/}{Chapter}  
+%  \import{Real/}{HahnBanach}    
+%  \import{Real/}{Baire}  
+%  \import{Real/}{BairetoBanach} 
+%  \import{Real/}{ContSpace} 
+%  \import{Real/}{Embedding}
+%  \import{Real/}{TopoVector}
+%  \import{Real/}{LCH}
+%  \import{Real/}{SobolevSpace}
+%  \import{Real/}{TVS} 
+%  \import{Real/}{Mollifier}
+
+
+%  \import{Real/Strichartz}{Ch1} 
+%  \import{Real/Strichartz}{Ch2}
+%  \import{Real/Strichartz}{Ch3}   
+%  \import{Real/Strichartz}{Ch4}
+%  \import{Real/Strichartz}{Ch5}
+%  \import{Real/Strichartz}{Ch6}
+%  \import{Real/Strichartz}{Ch7}
+%  \import{Real/Strichartz}{Ch8}
+          
+
+%------------------------MEASURE------------------------
+
+%  \import{Measure/}{LebesgueDiff}
+%  \import{Measure/}{Convergence}
+ 
+%  \import{Measure/}{ConvInDist}
+%  \import{Measure/}{SpaceMeasure}
+%  
+%  \import{Measure/}{MeasureOnTopo}
+%  
+%  \import{Measure/}{MeasWeakConv}
+%  \import{Measure/}{WeakCompact}
+%  
+%  \import{Measure/Radon}{Radon}
+%  \import{Measure/Radon/}{Dual}
+%  \import{Measure/Radon/}{Positive}
+%  \import{Measure/Radon/}{Regularity}
+
+
+%------------------------FUNCTIONAL------------------------
+
+%  \import{Functional}{UnboundedOperator} 
+%  \import{Functional/}{HarmonicOscillator} 
+%  \import{Functional/ReedSimonII/IX/}{Ch IX} 
+  \import{Functional/ReedSimonII/X/}{Ch X} 
+  \import{Functional/Albeverio/I/}{Ch1} 
+%  \import{Functional/AkhiezerGlazman/Ch8/}{Ch8} 
+%  \import{Functional/}{KreinFormula} 
+
+%------------------------QUANTUM------------------------
+
+%  \import{Physics/Quantum/Hall}{Ch2}
+%  \import{Physics/Quantum/Hall/}{Ch3}
+
+%------------------------PROB------------------------
+
+%  \import{Prob/}{CLT}  
+%  \import{Prob/}{Conditional1}
+%  \import{Prob/}{Kolmogorov}
+%  \import{Prob/BM}{BM}
+%  \import{Prob/}{MarkovDiscrete}
+%  \import{Prob/}{MarkovCont}
+%  \import{Prob/}{MarkovProperty}
+%  \import{Prob/}{MarkovProcess}
+%  \import{Prob/Basics}{RV}
+%  \import{Prob/Basics}{SumRV}
+%  \import{Prob/Basics}{GaussianVector}
+%  \import{Prob/Gaussian}{GaussianVector}
+%  \import{Prob/Gaussian}{GaussianMeasure}
+%  \import{Prob/BM}{BMnGaussian}
+
+%  \import{Prob/Martingale}{Krickeberg}
+%  \import{Prob/Martingale}{Martingale}
+%  \import{Prob/Martingale}{MartingaleL2}
+%  \import{Prob/Martingale}{ConvThm}
+%  \import{Prob/Martingale}{UI}
+%  \import{Prob/Martingale}{UImartingale}
+%  \import{Prob/Martingale}{Summary}
+%  \import{Measure/}{RadonNikodym}
+%  \import{Prob/Martingale}{UI}
+
+%  \import{Prob/MarkovChains/Norris}{Ch1}
+%  \import{Prob/MarkovChains/Norris}{Ch2}
+%  \import{Prob/MarkovChains/Norris}{Ch3}    
+%    
+%  \import{Prob/MarkovChains}{Properties}
+%  \import{Prob/MarkovChains}{Transience}
+%  \import{Prob/MarkovChains}{Recurrence}
+%  \import{Prob/MarkovChains}{Potential}
+%  \import{Prob/MarkovChains}{TranPotential}
+
+%  \import{Prob/LoopSoup}{Ch1} 
+%  \import{Prob/LoopSoup}{Ch2} 
+%  \import{Prob/LoopSoup}{Ch3} 
+%  \import{Prob/LoopSoup}{Ch4} 
+
+%  \import{Prob/LargeDeviations}{Ch1}
+%  \import{Prob/LargeDeviations}{Ch2}
+%  \import{Prob/LargeDeviations}{Ch3}
+
+
+%  \import{Prob/Feller}{Ch1}  
+%  \import{Prob/Feller}{Ch2}   
+%  \import{Prob/Feller}{Ch3}  
+
+%  \import{Prob/BM/MorPer}{Ch1}
+%  \import{Prob/BM/MorPer}{Ch2}
+%  \import{Prob/BM/MorPer}{Ch3}
+%  \import{Prob/BM/MorPer}{Ch4}
+%  \import{Prob/BM/MorPer}{Ch5}
+%  \import{Prob/BM/MorPer}{Ch6}
+%  \import{Prob/BM/MorPer}{Ch7}
+%  \import{Prob/BM/MorPer}{Ch8}  
+%  \import{Prob/BM/MorPer}{Ch9}  
+%  \import{Prob/BM/MorPer}{Ch10}  
+%  \import{Prob/BM/MorPer}{Ch11}  
+  
+    
+%   \import{Prob/}{MarkovDiscrete}    
+%
+%   \import{Prob/Gaussian/Eldredge}{Ch1}    
+%   \import{Prob/Gaussian/Eldredge}{Ch2}    
+%   \import{Prob/Gaussian/Eldredge}{Ch3}
+%   \import{Prob/Gaussian/Eldredge}{Ch4}
+%   \import{Prob/Gaussian/Eldredge}{Ch5}
+%   \import{Prob/Gaussian/Eldredge}{Ch6}    
+%   \import{Prob/Gaussian/Eldredge}{Ch7}  
+%   \import{Prob/Gaussian/Eldredge}{Ch8}  
+%   \import{Prob/Gaussian/Eldredge}{Summary}     
+
+
+%   \import{Prob/Wiener/Driver}{Ch2}      
+%   \import{Prob/Wiener/Driver}{Ch3}  
+%   \import{Prob/Wiener/Driver}{Ch4}  
+%   \import{Prob/Wiener/Driver}{Ch5}
+%   \import{Prob/Wiener/Driver}{Ch6}
+%   \import{Prob/Wiener/Driver}{Ch7}
+%   \import{Prob/Wiener/Driver}{Ch8}
+
+
+              
+%   \import{Prob/Stochastic/Emery}{Ch3}     
+
+%   \import{Prob/MarkovOperator/}{Sanchez}
+
+%   \import{Prob/RogersWilliams/III}{MarkovProcesses}
+%   \import{Prob/RogersWilliams/IV}{Ito}
+%   \import{Prob/RogersWilliams/V}{[SDE}
+%   \import{Prob/RogersWilliams/VI}{Dual}
+%   \import{Prob/RogersWilliams/VI}{Excursions}
+
+
+%   \import{Prob/Lawler}{Ch9}
+
+%   \import{Prob/BM/Chung/I}{Ch1}
+%   \import{Prob/BM/Chung/I}{Ch2}
+%   \import{Prob/BM/Chung/I}{Ch5}
+%   \import{Prob/BM/Chung/I}{Ch6}
+%   \import{Prob/BM/Chung/I}{Ch7}
+%   \import{Prob/BM/Chung/I}{Ch8}
+%   \import{Prob/BM/Chung/I}{Ch10}
+%   \import{Prob/BM/Chung/I}{Ch11}   
+%   \import{Prob/BM/Chung/I}{Ch12}   
+
+%   \import{Prob/BM/Chung/II}{Ch1}   
+%   \import{Prob/BM/Chung/II}{Ch2}
+%   \import{Prob/BM/Chung/II}{Ch3}
+%   \import{Prob/BM/Chung/II}{Ch4}
+%   \import{Prob/BM/Chung/II}{Ch5}                 
+%   \import{Prob/BM/Chung/II}{Ch6}   
+
+%   \import{Prob/BM/Chung/III}{Ch1}  
+   
+%   \import{Prob/Oksendal}{Ch1}      
+%   \import{Prob/Oksendal}{Ch3}      
+%   \import{Prob/Oksendal}{Ch5}                  
+
+%   \import{Prob/OksendalHolden}{Ch1}                 
+
+%   \import{Prob/Excursion/Blumenthal}{Ch II}         
+%   \import{Prob/Excursion/Blumenthal}{Ch III}            
+%   \import{Prob/Excursion/Blumenthal}{Ch IV}               
+%   \import{Prob/Excursion/Blumenthal}{Ch V}
+%   \import{Prob/Excursion/Blumenthal}{Ch VI}
+%   \import{Prob/Excursion/Blumenthal}{Ch VII}
+
+%   \import{Prob/Excursion/RevuzYor}{Ch I}
+%   \import{Prob/Excursion/RevuzYor}{Ch III}
+%   \import{Prob/Excursion/RevuzYor}{Ch IV}         
+%   \import{Prob/Excursion/RevuzYor}{Ch VI}
+%   \import{Prob/Excursion/RevuzYor}{Ch XI}
+%   \import{Prob/Excursion/RevuzYor}{Ch XII}
+
+%   \import{Prob/Liggett}{Ch3}    
+
+%   \import{Prob/ChungWalsh/}{Ch3}    
+
+%   \import{Prob/KarlinTaylor/Ch15/}{Diffusion} 
+
+%------------------------DIFFUSION------------------------
+
+%  \import{Diffusion/Bass}{Part1}
+%  \import{Diffusion/Bass}{Part2}
+%  \import{Diffusion/Bass}{Part3}
+%  \import{Diffusion/Bass}{Part4}
+%  \import{Diffusion/Bass}{Part5}
+%  \import{Diffusion/Bass}{Part6}
+%  \import{Diffusion/Bass}{Part7}
+%  \import{Diffusion/Bass}{Part8}
+  
+%  \import{Diffusion/Baudoin}{Ch1}
+%  \import{Diffusion/Baudoin}{Ch2}
+%  \import{Diffusion/Baudoin}{Ch3}
+%  \import{Diffusion/Baudoin}{Ch4}
+%  \import{Diffusion/Baudoin}{Ch6}
+%  \import{Diffusion/Baudoin}{Summary}
+
+%  \import{Diffusion/SDE}{Chapter}  
+%  \import{Diffusion/SDE}{Construction}
+%  \import{Diffusion/SDE}{Girsanov}
+%  \import{Diffusion/SDE}{Ito}
+%  \import{Diffusion/SDE}{MAF}
+%  \import{Diffusion/SDE}{Quadratic}
+
+
+
+%------------------------COMPLEX------------------------
+
+%  \import{Complex/}{Elementary}
+%  \import{Complex/}{Integral}
+%  \import{Complex/}{Singularities}
+%  \import{Complex/}{MaxMod}
+%  \import{Complex/}{Compact}
+%  \import{Complex/}{Runge}
+%  \import{Complex/}{Harmonic}
+%  \import{Complex/}{Entire}
+
+
+
+%------------------------DIFF GEO------------------------
+
+%  \import{DiffGeo/Weintraub}{Ch1}
+%  \import{DiffGeo/Weintraub}{Ch2}
+%  \import{DiffGeo/Weintraub}{Ch3}
+%  \import{DiffGeo/Weintraub}{Ch4}
+%  \import{DiffGeo/Weintraub}{Ch5}
+%  \import{DiffGeo/Weintraub}{Ch6}
+
+
+%  \import{DiffGeo/doCarmoEuclidean}{Ch1}
+%  \import{DiffGeo/doCarmoEuclidean}{Ch2}
+%  \import{DiffGeo/doCarmoEuclidean}{Ch3} 
+%  \import{DiffGeo/doCarmoEuclidean}{Ch4}
+%  \import{DiffGeo/doCarmoEuclidean}{Ch5}
+%
+%  \import{DiffGeo/doCarmo}{Supp}
+%  \import{DiffGeo/doCarmo}{Ch0}
+%  \import{DiffGeo/doCarmo}{Ch1}
+%  \import{DiffGeo/doCarmo}{Ch2}
+%  \import{DiffGeo/doCarmo}{Ch3}
+%  \import{DiffGeo/doCarmo}{Ch4}
+%  \import{DiffGeo/doCarmo}{Ch5}
+%  \import{DiffGeo/doCarmo}{Ch6}
+%  \import{DiffGeo/doCarmo}{Summary}
+
+
+%  \import{DiffGeo/Spivak/Vol1/}{Ch3}
+%  \import{DiffGeo/Spivak/Vol1/}{Ch4} 				%tensor
+%  \import{DiffGeo/Spivak/Vol1/}{Ch5}
+%  \import{DiffGeo/Spivak/Vol1/}{Ch6}
+%  \import{DiffGeo/Spivak/Vol1/}{Ch7}				%diff form
+%  \import{DiffGeo/Spivak/Vol1/}{Ch8}
+%  \import{DiffGeo/Spivak/Vol1/}{Summary}
+%  
+%  \import{DiffGeo/Spivak/Vol2}{Ch3-4}
+%  \import{DiffGeo/Spivak/Vol2}{Ch5}
+%  \import{DiffGeo/Spivak/Vol2}{Ch6}
+
+%  \import{DiffGeo/TensorCal/}{Title}
+%  \import{DiffGeo/TensorCal/}{Video20}
+%  \import{DiffGeo/TensorCal/}{Video22}
+
+  \import{DiffGeo/Lee}{Lee}
+
+%  \import{DiffGeo/}{Hodge}
+
+
+
+%------------------------DIRICHLET------------------------
+
+%  \import{DirichletForms/Fukushima}{Ch1}    
+%  \import{DirichletForms/Fukushima}{Ch2}    
+%  \import{DirichletForms/Fukushima}{Ch5}    
+  
+%  \import{DirichletForms/BouleauHirsch/}{I}    
+  
+%  \import{DirichletForms/MaRockner/}{I}    
+  
+%  \import{DirichletForms/}{Dirichlet}
+%  \import{PaperSummary/Papers}{[Getoor] Transience}
+
+%  \import{DirichletForms/}{Friedrichs}
+  
+
+
+
+%------------------------EM------------------------
+
+%  \import{EM/}{Ch1}
+%  \import{EM/}{Ch2}
+
+
+%------------------------ODE------------------------
+
+%  \import{ODE/}{Ch1}
+%  \import{ODE/}{Ch2}
+%  \import{ODE/}{Ch3}
+%  \import{ODE/}{Ch5}
+  
+  
+
+%------------------------PDE------------------------
+
+ \import{PDE/}{GreenFunction}
+%% \import{PDE/}{Harmonic}
+% \import{PDE/HanLin}{Ch1}
+
+% \import{PDE/Evans/Ch2/}{Ch2}
+
+% \import{PDE/Strauss}{Ch1}
+% \import{PDE/Strauss}{Ch2}
+% \import{PDE/Strauss}{Ch3}
+% \import{PDE/Strauss}{Ch4}
+% \import{PDE/Strauss}{Ch7}
+% \import{PDE/Strauss}{Ch12}
+  
+
+%------------------------LIE GROUP------------------------
+
+%  \import{LieGroup/}{Ch1}
+%  \import{LieGroup/}{Ch2}
+%  \import{LieGroup/}{Ch3}
+%  \import{LieGroup/}{Ch4}
+%  \import{LieGroup/}{Ch5}
+%  \import{LieGroup/}{Ch6}
+%  \import{LieGroup/}{Ch7}
+%  \import{LieGroup/}{Ch8}
+%  \import{LieGroup/}{Ch9}
+%  \import{LieGroup/}{Summary}      
+
+
+
+%------------------------LINEAR ALG------------------------
+
+%  \import{LinearAlg/}{Affine}       
+
+%  \import{Etc/}{Chapter}
+%  \import{ZOld Files/}{Ch_Diffusion}
+
+
+
+%------------------------LECTURE NOTES------------------------
+
+%  \import{LectureNotes/}{280B}
+%  \import{LectureNotes/}{280C}
+%  \import{LectureNotes/}{286}
+%  \import{LectureNotes/}{294}
+
+
+%------------------------SPECIAL------------------------ 
+
+%  \import{SpecialTopics}{Percolation}
+%  \import{SpecialTopics}{Ising}
+
+%  \import{SpecialTopics/Mechanics/}{Ch1}
+%  \import{SpecialTopics/Mechanics/}{Ch2}
+%  \import{SpecialTopics/Mechanics/}{Appendix}
+
+
+%------------------------NUMERICAL------------------------
+		
+%  \import{Numerical/Hildebrand/}{Ch7}
+%  \import{Numerical/Hildebrand/}{Ch8}
+%  \import{Numerical/}{GaussianQuadrature}
+
+
+
+%------------------------STATISTICS------------------------
+
+%  \import{Statistics/}{SamplingEstimator}
+
+
+
+%------------------------RANDOM------------------------
+
+%  \include{ZRandom}
+%  \import{ZRandom/}{Predator}
+
+  
+
+
+
+%------------------------PAPER SUMMARY------------------------
+
+%  \import{PaperSummary/}{ZChapter}
+
+    
+
+%----------------------------------THESIS-------------------------------------
+
+%  \import{Thesis/}{Going}
+%  \import{Thesis/}{ThesisSummary}
+
+
+
+
+
+
+
+%==================PHYSICS========================
+
+%  \import{Physics/Mechanics/Goldstein}{Ch1}
+%  \import{Physics/Mechanics/Goldstein}{Ch2}  
+%  \import{Physics/Mechanics/Goldstein}{Ch5}    
+%  \import{Physics/Mechanics/Goldstein}{Ch7}
+%  \import{Physics/Mechanics/Goldstein}{Ch8}  
+%  \import{Physics/Mechanics/Goldstein}{Ch9}        
+%  \import{Physics/Mechanics/Goldstein}{Ch10}
+
+%  \import{Physics/Relativity/Hartle}{Ch3}    
+%  \import{Physics/Relativity/Hartle}{Ch4}    
+        
+%  \import{Physics/EM/Griffith}{Ch1}
+%  \import{Physics/EM/Griffith}{Ch2}
+
+%  \import{Physics/EM/Garrity}{Ch2}
+%  \import{Physics/EM/Garrity}{Ch3}
+%  \import{Physics/EM/Garrity}{Ch4}
+%  \import{Physics/EM/Garrity}{Ch7}
+%  \import{Physics/EM/Garrity}{Ch8}
+
+
+
+
+
+
+%------------------------OBJECTS------------------------
+
+%  \include{ZObjects}
+%  \input{ZScratch.tex}    
+
+
+
+    
+\end{onehalfspacing}
+\end{document}
+
+
